@@ -62,7 +62,7 @@ public class ClienteController {
     }
     
     // Endpoint para autenticar un cliente
-    @PostMapping("/clientes/login")
+    @PostMapping("/clientes/authenticate")
     public ResponseEntity<?> authenticate(@RequestBody AuthRequest authRequest) {
         boolean isAuthenticated = clienteService.validateCredentials(authRequest.getEmail(), authRequest.getPassword());
         if (isAuthenticated) {
